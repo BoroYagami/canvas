@@ -1,20 +1,26 @@
 var d = document.getElementById("dibujito");
 var lienzo = d.getContext("2d");
-var lineas =30;
+var lineas =15;
 var l = 0;
-var yi, xf;
+var yi, xf, xi;
 var colorcito = "#FAA";
+var yf = 150;
 
 for (l = 0; l < lineas; l++)
 {
-  yi = 10 * l;
-  xf = 10 * l;
-  DibujarLinea(colorcito, 0, yi, xf, 300);
+  xi = 10 * l;
+  yf = yf - 10;
+  DibujarLinea(colorcito, xi, 150, 150, yf);
   console.log("Linea " + 1);
 }
 
 DibujarLinea(colorcito, 1, 1, 1, 299);
 DibujarLinea(colorcito, 1, 299, 299, 299);
+DibujarLinea(colorcito, 299, 299, 299, 1);
+DibujarLinea(colorcito, 299, 1, 1, 1);
+
+DibujarLinea(colorcito, 150, 1, 150, 299);
+DibujarLinea(colorcito, 1, 150, 299, 150);
 
 function DibujarLinea(color, xinicial, yinicial, xfinal, yfinal)
 {
